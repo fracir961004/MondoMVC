@@ -18,9 +18,9 @@ public class NazioneDaoImpl implements INazioneDao {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 
-		try {
+		try {  //cio 
 			connessione = ConnectionFactory.getConnection();
-			String query = "select distinct Name from country group by Continent;";
+			String query = "select distinct Name from country group by ";
 			ps = connessione.prepareStatement(query);
 			rs = ps.executeQuery();
 

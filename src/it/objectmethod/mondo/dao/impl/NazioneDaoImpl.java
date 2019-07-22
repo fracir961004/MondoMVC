@@ -20,7 +20,7 @@ public class NazioneDaoImpl implements INazioneDao {
 
 		try {  
 			connessione = ConnectionFactory.getConnection();
-			String query = "select distinct Name from country group by ";
+			String query = "select distinct Name from country";
 			ps = connessione.prepareStatement(query);
 			rs = ps.executeQuery();
 

@@ -16,17 +16,19 @@
 		<c:forEach var="listaContinenti" items="${risultato}">
 
 			<form action="Scelta">   <br>
-			
-				
-				<a href="/MondoMVC/NazioneServlet?Continent=${listaContinenti}" >
+			 >
+      		
+         	<a href="/MondoMVC/NazioneServlet?Continent=${listaContinenti}" >
 				${listaContinenti}
 					
 				</a> 
-			
-			
-			</form>  
+      		
+      			</form>  
 		</c:forEach>
 
 	</div>
+
+			
+		
 </body>
 </html>

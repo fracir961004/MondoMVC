@@ -20,7 +20,7 @@ public class PopolazioneDaoImpl implements IPopolazioneDao{
 		
 		try {
 			connessione=ConnectionFactory.getConnection();
-			String query="Select Population from city";
+			String query="select Population, Name from city group by ID;";
 			ps=connessione.prepareStatement(query);
 			rs=ps.executeQuery();
 			while(rs.next()) {

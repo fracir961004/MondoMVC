@@ -37,4 +37,16 @@
 		<servlet-name>Citta</servlet-name>
 		<url-pattern>/CittaServlet</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Popolazione</servlet-name>
+		<servlet-class>it.objectmethod.mondo.servlets.PopolazioneServlet</servlet-class>
+		 
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Popolazione</servlet-name>
+		<url-pattern>/PopolazioneServlet</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

@@ -13,6 +13,7 @@ public class NazioneDaoImpl implements INazioneDao {
 
 	@Override
 	public List<String> getNazione() {
+		String parametro="[?]";
 		List<String> lista = new ArrayList<String>();
 		Connection connessione = null;
 		PreparedStatement ps = null;
@@ -20,7 +21,8 @@ public class NazioneDaoImpl implements INazioneDao {
 
 		try {  
 			connessione = ConnectionFactory.getConnection();
-			String query = "select distinct Name from country";
+			
+			String query = "select distinct Name from country where Continent=[?]"+parametro;
 			ps = connessione.prepareStatement(query);
 			rs = ps.executeQuery();
 

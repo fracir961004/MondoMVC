@@ -17,7 +17,8 @@
 			<form action="Scelta">   <br>
 			
 				
-				<a href="/MondoMVC/NazioneServlet?Name=${listaCitta}" >
+				
+				<a href="/MondoMVC/PopolazioneServlet?Name=${listaCitta}" >
 				${listaCitta}
 					
 				</a> 

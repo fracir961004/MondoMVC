@@ -11,6 +11,7 @@
 
 	
 		<c:forEach var="listaNazioni" items="${risultato}" > <br>
+		      
 		
 			<a href="/MondoMVC/CittaServlet?Name=${listaNazioni}" >
 				${listaNazioni}	

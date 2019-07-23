@@ -3,7 +3,7 @@ package it.objectmethod.mondo.domain;
 public class Nazione {
 	private int id;
 	private String code;
-	private String nome;
+	private static String nome;
 	private int popolazione;
 
 	public Nazione() {
@@ -33,7 +33,7 @@ public class Nazione {
 		this.code = code;
 	}
 
-	public String getNome() {
+	public static String getNome() {
 		return nome;
 	}
 

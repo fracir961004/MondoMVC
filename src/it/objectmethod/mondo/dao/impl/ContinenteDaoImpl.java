@@ -3,10 +3,12 @@ package it.objectmethod.mondo.dao.impl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import it.objectmethod.mondo.dao.IContinent;
+
 import it.objectmethod.mondo.config.ConnectionFactory;
 
 public class ContinenteDaoImpl implements IContinent {
@@ -20,7 +22,9 @@ public class ContinenteDaoImpl implements IContinent {
 
 		try {
 			connessione = ConnectionFactory.getConnection();
+
 			String query = "Select distinct Continent from country";
+
 			st = connessione.prepareStatement(query);
 			rs = st.executeQuery();
 

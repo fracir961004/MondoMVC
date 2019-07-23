@@ -13,17 +13,18 @@ public class NazioneDaoImpl implements INazioneDao {
 
 	@Override
 	public List<String> getNazione() {
-		String parametro="[?]";
+		String valoreContinente = "";
 		List<String> lista = new ArrayList<String>();
 		Connection connessione = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 
-		try {  
+		try {
 			connessione = ConnectionFactory.getConnection();
-			
-			String query = "select distinct Name from country where Continent=[?]"+parametro;
+			String query = "SELECT Name FROM country WHERE Continent = ?";
 			ps = connessione.prepareStatement(query);
+			ps.setString(1, valoreContinente);
+
 			rs = ps.executeQuery();
 
 			while (rs.next()) {

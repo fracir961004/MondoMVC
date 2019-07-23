@@ -11,18 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import it.objectmethod.mondo.dao.impl.CityDaoImpl;
 
-public class CittaServlet extends HttpServlet{
-	
+public class CittaServlet extends HttpServlet {
+
 	public void doGet(HttpServletRequest rs, HttpServletResponse res) throws ServletException, IOException {
-		
-		
-		CityDaoImpl cydi=new CityDaoImpl();
-		List<String> lista=new ArrayList<String>();
-		lista=cydi.getCitta();
-		
+
+		CityDaoImpl cydi = new CityDaoImpl();
+		List<String> lista = new ArrayList<String>();
+		lista = cydi.getCitta();
+
 		rs.setAttribute("listaCitta", lista);
-		rs.getRequestDispatcher("pagine/Citta.jsp").forward(rs,res);
+		rs.getRequestDispatcher("pagine/Citta.jsp").forward(rs, res);
 	}
-	
 
 }

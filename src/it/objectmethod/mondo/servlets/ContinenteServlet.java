@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import it.objectmethod.mondo.dao.impl.ContinenteDaoImpl;
 
-
 public class ContinenteServlet extends HttpServlet {
 
 	/**
@@ -19,7 +18,7 @@ public class ContinenteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		ContinenteDaoImpl cdi = new ContinenteDaoImpl();
 
 		List<String> lista = cdi.getContinente();

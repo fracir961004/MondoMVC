@@ -27,7 +27,7 @@ public class CittaServlet extends HttpServlet{
 			e.printStackTrace();
 		}
 		
-		req.getRequestDispatcher("pagine/city.jsp").forward(req, resp);
+		req.getRequestDispatcher("pagine/Citta.jsp").forward(req, resp);
 	}
 
 }

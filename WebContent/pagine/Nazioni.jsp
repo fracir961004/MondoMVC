@@ -12,7 +12,9 @@
 	<div align="center" style="margin-top: 50px">
 	
 		<c:forEach var="naz" items="${nazioni}"> <br>
-		<p> ${naz.name}</p> <br>
+		<a href="/MondoMVC/CittaServlet?Name=${naz}" > <br>
+		${naz.name}
+		</a>
 		<!-- .name è l'attributo della classe. sei nella parte Front End quindi  non ci riguarda il db -->
 			</c:forEach>
 

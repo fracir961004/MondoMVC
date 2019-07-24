@@ -9,7 +9,7 @@ import it.objectmethod.mondo.domain.Country;
 
 public interface ICountryDao {
 	
-	public Country getNazioni(String nomeNazione);
+	public List<Country> getNazioni(String nomeNazione);
 	public  List<String> getContinenti();
 
 }

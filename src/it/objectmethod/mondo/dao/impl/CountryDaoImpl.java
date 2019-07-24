@@ -48,15 +48,16 @@ public class CountryDaoImpl implements ICountryDao {
 	}
 
 	@Override
-	public Country getNazioni(String nomeNazione) {
+	public List<Country> getNazioni(String nomeNazione) {
 		Connection connessione = null;
 		ResultSet rs = null;
 		PreparedStatement st = null;
+		List<Country> listaNaz=new ArrayList<Country>();
 		Country naz = null;
 
 		try {
 			connessione = ConnectionFactory.getConnection();
-			String query = "Select distinct Name from country where Continent = ?";
+			String query = "Select Name from country where Continent = ?";
 			st = connessione.prepareStatement(query);
 			st.setString(1, "nomeNazione");
 			/*
@@ -75,29 +76,27 @@ public class CountryDaoImpl implements ICountryDao {
 				naz.setName(rs.getString("name"));
 				naz.setPopolazione(rs.getInt("population"));
 				naz.setNazione(rs.getString("nazione"));
-				naz.setContinente(rs.getString("continent"));
+				naz.setContinente(rs.getString("Continent"));
+				listaNaz.add(naz);
 			}
-			rs.close();
+			
+			if (connessione != null) {
+				connessione.close();
+			}
+			if (rs != null) {
+				rs.close();
+			}
+			if (st != null) {
+				st.close();
+			}
 		} catch (Exception e) {
 
 			e.printStackTrace();
-		} finally {
-			try {
-				if (st != null) {
-					st.close();
-				}
-			} catch (SQLException se) {
-			}
-			try {
-				if (connessione != null) {
-					connessione.close();
-				}
-			} catch (SQLException se) {
-				se.printStackTrace();
-			}
-		}
+		} 
+	
 
-		return naz;
+
+		return listaNaz;
 
 	}
 

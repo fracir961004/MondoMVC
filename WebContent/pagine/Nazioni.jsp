@@ -7,21 +7,14 @@
 <title>Nazioni</title>
 </head>
 <body>
- <h1>Nazioni del Continente scelto:</h1>
- 
- <div align="center" style="margin-top: 50px">
+	<h1>Nazioni del Continente scelto:</h1>
 
- 
- 
+	<div align="center" style="margin-top: 50px">
+	
+		<c:forEach var="listaNazioni" items="${Nazioni}"> <br>
+		<p>Ecco le nazioni: ${listaNazioni}</p>
+			</c:forEach>
 
- <c:forEach var="nazioneScelta" items="${Nazioni}" > <br>
-		     
-		 
-			<a href="/MondoMVC/NazioneServlet?Name=${nazioneScelta}" >
-				${nazioneScelta}	
-				</a>
-				 
-		</c:forEach>
-		</div> 
+	</div>
 </body>
 </html>

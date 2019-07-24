@@ -7,20 +7,20 @@ public class Country {
 	private String name;
 	private int population;
 	private String nazione;
-	private String continent;
+	private String Continent;
 
 	public Country() {
 
 	}
 
-	public Country(int id, String code, String name, int popolazione, String nazione, String continente) {
+	public Country(int id, String code, String name, int popolazione, String nazione, String Continent) {
 
 		this.id = id;
 		this.code = code;
 		this.name = name;
 		this.population = popolazione;
 		this.nazione = nazione;
-		this.continent = continente;
+		this.Continent = Continent;
 	}
 
 	public String getNazione() {
@@ -64,15 +64,15 @@ public class Country {
 	}
 
 	public String getContinente() {
-		return continent;
+		return Continent;
 	}
 
-	public void setContinente(String continente) {
-		this.continent = continente;
+	public void setContinente(String Continent) {
+		this.Continent = Continent;
 	}
 
 	public String toString() {
-		return id + " " + code + " " + name + " " + population + nazione + " " + " " + continent + " ";
+		return id + " " + code + " " + name + " " + population + nazione + " " + " " + Continent + " ";
 	}
 
 }

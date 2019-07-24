@@ -13,17 +13,17 @@
 	<div align="center" style="margin-top: 50px">
 
 
-		<c:forEach var="listaContinenti" items="${risultato}">
+		<c:forEach var="listaContinenti" items="${continenti}"> <br>
 
-			<form action="Scelta">   <br>
+			 
 			 
       		
-         	<a href="/MondoMVC/NazioneServlet?Continent=North America" >
+         	<a href="/MondoMVC/NazioneServlet?Continent=${listaContinenti}" >
 				${listaContinenti}
 					
 				</a> 
       		
-      			</form>  
+      			
 		</c:forEach>
 
 	</div>

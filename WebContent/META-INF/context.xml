@@ -8,12 +8,7 @@
 		validationQuery="select distinct Continent from country" 
 		/>
 		
-		<Resource auth="Container"
-		driverClassName="com.mysql.jdbc.Driver" name="jdbc/local"
-		username="root" password="root" type="javax.sql.DataSource"
-		url="jdbc:mysql://localhost:3306/world"
-		validationQuery="select distinct Name from country" 
-		/>
+	
 		
 		
 

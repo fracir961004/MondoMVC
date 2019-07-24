@@ -13,7 +13,7 @@ import it.objectmethod.mondo.config.ConnectionFactory;
 
 public class CountryDaoImpl implements ICountryDao {
 
-	public List<String> getContinenti() {
+	public List<String> getContinenti() throws SQLException{
 
 		Connection connessione = null;
 		ResultSet rs = null;
@@ -27,7 +27,7 @@ public class CountryDaoImpl implements ICountryDao {
 			rs = st.executeQuery();
 
 			while (rs.next()) {
-				String risultato = rs.getString("continent");
+				String risultato = rs.getString("Continent");
 				lista.add(risultato);
 			}
 
@@ -48,18 +48,19 @@ public class CountryDaoImpl implements ICountryDao {
 	}
 
 	@Override
-	public List<Country> getNazioni(String nomeNazione) {
-		Connection connessione = null;
-		ResultSet rs = null;
-		PreparedStatement st = null;
-		List<Country> listaNaz=new ArrayList<Country>();
-		Country naz = null;
+	public List<Country> getNazioni(String continente) throws SQLException{
+		Connection connessione;
+		ResultSet rs;
+		PreparedStatement st;
+		List<Country> listaNaz = new ArrayList<Country>();
+		Country naz;
 
 		try {
 			connessione = ConnectionFactory.getConnection();
-			String query = "Select Name from country where Continent = ?";
-			st = connessione.prepareStatement(query);
-			st.setString(1, "nomeNazione");
+			st = connessione.prepareStatement("select * from country where Continent=?");
+			st.setString(1, continente);
+			/*qua gli passo il parametro*/
+			rs = st.executeQuery();
 			/*
 			 * il set lo utilizzo per indicare quanti ? ci sono. Ovviamente ci deve essere
 			 * una clausola(where) come in questo caso where Continent=? metto tanti set
@@ -68,18 +69,17 @@ public class CountryDaoImpl implements ICountryDao {
 			 * statement.setString(1,"fdfs") statement.setString(2,"vcsc");
 			 * 
 			 */
-			rs = st.executeQuery();
 
 			while (rs.next()) {
 				naz = new Country();
-				naz.setCode(rs.getString("code"));
-				naz.setName(rs.getString("name"));
-				naz.setPopolazione(rs.getInt("population"));
-				naz.setNazione(rs.getString("nazione"));
+				naz.setCode(rs.getString("Code"));
+				naz.setName(rs.getString("Name"));
 				naz.setContinente(rs.getString("Continent"));
+				naz.setPopolazione(rs.getInt("Population"));
+				/*in getString/Int ci passo l'attributo del db*/
 				listaNaz.add(naz);
 			}
-			
+
 			if (connessione != null) {
 				connessione.close();
 			}
@@ -92,9 +92,7 @@ public class CountryDaoImpl implements ICountryDao {
 		} catch (Exception e) {
 
 			e.printStackTrace();
-		} 
-	
-
+		}
 
 		return listaNaz;
 

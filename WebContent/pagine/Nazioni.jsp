@@ -11,8 +11,8 @@
 
 	<div align="center" style="margin-top: 50px">
 	
-		<c:forEach var="listaNazioni" items="${Nazioni}"> <br>
-		<p>Ecco le nazioni: ${listaNazioni}</p>
+		<c:forEach var="naz" items="${nazioni}"> <br>
+		<p> ${naz.name}</p> <br>
 			</c:forEach>
 
 	</div>

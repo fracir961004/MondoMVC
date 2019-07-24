@@ -6,30 +6,22 @@ public class Country {
 	private String code;
 	private String name;
 	private int population;
-	private String nazione;
-	private String Continent;
+	private String continent;
 
 	public Country() {
 
 	}
 
-	public Country(int id, String code, String name, int popolazione, String nazione, String Continent) {
+	public Country(int id, String code, String name, int popolazione,  String continent) {
 
 		this.id = id;
 		this.code = code;
 		this.name = name;
 		this.population = popolazione;
-		this.nazione = nazione;
-		this.Continent = Continent;
+		this.continent = continent;
 	}
 
-	public String getNazione() {
-		return nazione;
-	}
-
-	public void setNazione(String nazione) {
-		this.nazione = nazione;
-	}
+	
 
 	public int getId() {
 		return id;
@@ -64,15 +56,15 @@ public class Country {
 	}
 
 	public String getContinente() {
-		return Continent;
+		return continent;
 	}
 
-	public void setContinente(String Continent) {
-		this.Continent = Continent;
+	public void setContinente(String continent) {
+		this.continent = continent;
 	}
 
 	public String toString() {
-		return id + " " + code + " " + name + " " + population + nazione + " " + " " + Continent + " ";
+		return id + " " + code + " " + name + " " + population + " " + " " + continent + " ";
 	}
 
 }

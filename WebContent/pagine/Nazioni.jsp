@@ -13,6 +13,7 @@
 	
 		<c:forEach var="naz" items="${nazioni}"> <br>
 		<p> ${naz.name}</p> <br>
+		<!-- .name è l'attributo della classe. sei nella parte Front End quindi  non ci riguarda il db -->
 			</c:forEach>
 
 	</div>

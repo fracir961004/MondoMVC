@@ -13,7 +13,7 @@ import it.objectmethod.mondo.config.ConnectionFactory;
 
 public class CountryDaoImpl implements ICountryDao {
 
-	public List<String> getContinenti() throws SQLException{
+	public List<String> getContinenti() throws SQLException {
 
 		Connection connessione = null;
 		ResultSet rs = null;
@@ -48,7 +48,7 @@ public class CountryDaoImpl implements ICountryDao {
 	}
 
 	@Override
-	public List<Country> getNazioni(String continente) throws SQLException{
+	public List<Country> getNazioni(String continente) throws SQLException {
 		Connection connessione;
 		ResultSet rs;
 		PreparedStatement st;
@@ -59,7 +59,7 @@ public class CountryDaoImpl implements ICountryDao {
 			connessione = ConnectionFactory.getConnection();
 			st = connessione.prepareStatement("select * from country where Continent=?");
 			st.setString(1, continente);
-			/*qua gli passo il parametro*/
+			/* qua gli passo il parametro */
 			rs = st.executeQuery();
 			/*
 			 * il set lo utilizzo per indicare quanti ? ci sono. Ovviamente ci deve essere
@@ -76,7 +76,7 @@ public class CountryDaoImpl implements ICountryDao {
 				naz.setName(rs.getString("Name"));
 				naz.setContinente(rs.getString("Continent"));
 				naz.setPopolazione(rs.getInt("Population"));
-				/*in getString/Int ci passo l'attributo del db*/
+				/* in getString/Int ci passo l'attributo del db */
 				listaNaz.add(naz);
 			}
 

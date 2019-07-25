@@ -13,20 +13,21 @@ import it.objectmethod.mondo.dao.ICityDao;
 import it.objectmethod.mondo.dao.impl.CityDaoImpl;
 import it.objectmethod.mondo.domain.City;
 
-public class CittaServlet extends HttpServlet{
-	
+public class CittaServlet extends HttpServlet {
+
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//vado a prendere il paramentro dal DB. lo recuperiamo in modo da darlo a city più avanti
-		String nomeNaz=req.getParameter("Name");
-		ICityDao city=new CityDaoImpl();
-		List<City> elenccity=new ArrayList<City>();
+		// vado a prendere il paramentro dal DB. lo recuperiamo in modo da darlo a city
+		// più avanti
+		String nomeNaz = req.getParameter("Name");
+		ICityDao city = new CityDaoImpl();
+		List<City> elenccity = new ArrayList<City>();
 		try {
-			elenccity=city.getCities(nomeNaz);
-			req.setAttribute("elencoCitta",  elenccity);
-		}catch(Exception e) {
+			elenccity = city.getCities(nomeNaz);
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		req.setAttribute("elencoCitta", elenccity);
 		req.getRequestDispatcher("pagine/Citta.jsp").forward(req, resp);
 	}
 

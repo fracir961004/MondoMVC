@@ -7,5 +7,5 @@ import it.objectmethod.mondo.domain.City;
 
 public interface ICityDao {
 
-	public List<City> getCities(String nazione)throws SQLException;
+	public List<City> getCities(String nazione) throws SQLException;
 }

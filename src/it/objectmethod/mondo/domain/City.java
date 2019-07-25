@@ -7,9 +7,9 @@ public class City {
 	private String countryCode;
 	private String district;
 	private int population;
-	
+
 	public City() {
-		
+
 	}
 
 	public City(int id, String name, String countryCode, String district, int population) {
@@ -59,8 +59,8 @@ public class City {
 	public void setPopulation(int population) {
 		this.population = population;
 	}
-	
+
 	public String toString() {
-		return id+" "+name+" "+countryCode+" "+district+" "+population;
+		return id + " " + name + " " + countryCode + " " + district + " " + population + " ";
 	}
 }

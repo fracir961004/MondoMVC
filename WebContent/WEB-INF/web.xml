@@ -15,29 +15,29 @@
 		<servlet-name>Continente</servlet-name>
 		<url-pattern>/ContinenteServlet</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>Nazione</servlet-name>
 		<servlet-class>it.objectmethod.mondo.servlets.NazioneServlet</servlet-class>
-		 
+
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>Nazione</servlet-name>
 		<url-pattern>/NazioneServlet</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
-	
-			<servlet-name>Citta</servlet-name>
-			<servlet-class>it.objectmethod.mondo.servlets.CittaServlet</servlet-class>
-	
+
+		<servlet-name>Citta</servlet-name>
+		<servlet-class>it.objectmethod.mondo.servlets.CittaServlet</servlet-class>
+
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>Citta</servlet-name>
 		<url-pattern>/CittaServlet</url-pattern>
-    </servlet-mapping>
+	</servlet-mapping>
 
-	
+
 </web-app>

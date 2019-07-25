@@ -12,7 +12,7 @@ public class Country {
 
 	}
 
-	public Country(int id, String code, String name, int popolazione,  String continent) {
+	public Country(int id, String code, String name, int popolazione, String continent) {
 
 		this.id = id;
 		this.code = code;
@@ -20,8 +20,6 @@ public class Country {
 		this.population = popolazione;
 		this.continent = continent;
 	}
-
-	
 
 	public int getId() {
 		return id;

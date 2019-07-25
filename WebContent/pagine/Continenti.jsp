@@ -13,22 +13,21 @@
 	<div align="center" style="margin-top: 50px">
 
 
-		<c:forEach var="listaContinenti" items="${continenti}"> <br>
+		<c:forEach var="listaContinenti" items="${continenti}">
+			<br>
 
-			 
-			 
-      		
-         	<a href="/MondoMVC/NazioneServlet?Continent=${listaContinenti}" >
-				${listaContinenti}
-					
-				</a> 
-      		
-      			
+
+
+
+			<a href="/MondoMVC/NazioneServlet?Continent=${listaContinenti}">
+				${listaContinenti} </a>
+
+
 		</c:forEach>
 
 	</div>
 
-			
-		
+
+
 </body>
 </html>

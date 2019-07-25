@@ -15,17 +15,14 @@ import it.objectmethod.mondo.dao.impl.CountryDaoImpl;
 
 public class ContinenteServlet extends HttpServlet {
 
-	
-
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		ICountryDao countrydaoimpl = new CountryDaoImpl();
 
-		List<String> listContinent=new ArrayList<String>();
+		List<String> listContinent = new ArrayList<String>();
 		try {
 			listContinent = countrydaoimpl.getContinenti();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		request.setAttribute("continenti", listContinent);

@@ -49,11 +49,11 @@ public class CountryDaoImpl implements ICountryDao {
 
 	@Override
 	public List<Country> getNazioni(String continente) throws SQLException {
-		Connection connessione;
-		ResultSet rs;
-		PreparedStatement st;
+		Connection connessione=null;
+		ResultSet rs=null;
+		PreparedStatement st=null;
 		List<Country> listaNaz = new ArrayList<Country>();
-		Country naz;
+		Country naz=null;
 
 		try {
 			connessione = ConnectionFactory.getConnection();

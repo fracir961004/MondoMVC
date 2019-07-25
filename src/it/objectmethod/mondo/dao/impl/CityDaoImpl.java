@@ -21,7 +21,7 @@ public class CityDaoImpl implements ICityDao {
 		City citta = null;
 		try {
 			conn = ConnectionFactory.getConnection();
-			prepstat = conn.prepareStatement("select * from city inner join country on country.Code=city.CountryCode where city.Name=?");
+			prepstat = conn.prepareStatement("select * from city where city.countryCode=?");
 			prepstat.setString(1, nazione);
 			rest = prepstat.executeQuery();
 
@@ -33,7 +33,10 @@ public class CityDaoImpl implements ICityDao {
 				citta.setDistrict(rest.getString("District"));
 				citta.setPopulation(rest.getInt("Population"));
 				elencoCit.add(citta);
-
+				/*Se nella query seleziono solo name e population poi mi darà l'eccezzione che non mi troverà id, countrycode e district
+				 *perchè attraverso il get recupera i dati dal db però prima li seleziono nel db 
+				 * */
+			}
 				if (conn != null) {
 					conn.close();
 				}
@@ -43,7 +46,7 @@ public class CityDaoImpl implements ICityDao {
 				if (prepstat != null) {
 					prepstat.close();
 				}
-			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

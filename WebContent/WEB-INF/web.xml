@@ -39,5 +39,26 @@
 		<url-pattern>/CittaServlet</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>Eliminazione</servlet-name>
+		<servlet-class>it.objectmethod.mondo.servlets.EliminazioneServlet</servlet-class>
+
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Eliminazione</servlet-name>
+		<url-pattern>/EliminazioneServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Inserimento</servlet-name>
+		<servlet-class>it.objectmethod.mondo.servlets.InsertUpdateServlet</servlet-class>
+
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Inserimento</servlet-name>
+		<url-pattern>/InserimentoServlet</url-pattern>
+	</servlet-mapping>
 
 </web-app>

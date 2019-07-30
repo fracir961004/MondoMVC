@@ -11,5 +11,5 @@ public interface ICityDao {
 
 	public City eliminazioneCitta(int idCitta) throws SQLException;
 	
-	//public City inserimentoCitta(int idCitta)throws SQLException;
+	public City inserimentoModificaCity(int idCitta,String name,String code,int popolazione)throws SQLException;
 }

@@ -81,36 +81,39 @@ public class CityDaoImpl implements ICityDao {
 		return city;
 
 	}
-/*
-	public City inserimentoCitta(int idCitta) throws SQLException {
-		idCitta=0;
-		City city=new City();
-		int nabitanti = 20000;
-		conn=ConnectionFactory.getConnection();
+
+	public City inserimentoModificaCity(int idCitta, String name, String code, int popolazione) throws SQLException {
+		City city = new City();
+		
 		try {
-			if(city.getId()==idCitta) {
-				String sql="Insert into city(Name,CountryCode,District,Population)Values(?,?,?)";
-				prepstat=conn.prepareStatement(sql);
-				prepstat.execute();
-				prepstat.setString(1,"Gerenzano");
-				prepstat.setString(2,"ITA");
-				prepstat.setString(3,"North Italy");
-				prepstat.setInt(4, nabitanti);
+				conn = ConnectionFactory.getConnection();
+			if (idCitta == 0) {
+
+				prepstat = conn.prepareStatement("Insert into city(Name,CountryCode,Population,ID) Values (?,?,?,?)");
+
+				prepstat.setString(1, name);
+				prepstat.setString(2, code);
+				prepstat.setInt(3, popolazione);
+				prepstat.setInt(4, idCitta);
+				prepstat.executeUpdate();
+			} else {
+				String sql = "Update city set(Name,CountryCode,District,Population) where id=?";
+				prepstat = conn.prepareStatement(sql);
+				prepstat.setInt(1, idCitta);
+				prepstat.executeUpdate();
 			}
-			else {
-				System.out.println("Città già esistente");
-			}
-			if(conn !=null) {
+
+			if (conn != null) {
 				conn.close();
 			}
-			if(prepstat !=null) {
+			if (prepstat != null) {
 				prepstat.close();
 			}
-			
-		}catch(Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return city;
-	}*/
+	}
 
 }

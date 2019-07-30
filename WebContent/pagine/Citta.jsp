@@ -17,20 +17,27 @@
 			${city.name}
 			
 		   <div class="Azione">
-		   
-					<a href="EliminazioneServlet?id=${city.id}">Elimina</a>
-					
 
+				<a href="EliminazioneServlet?id=${city.id}">Elimina</a>
 			</div>
 
 
+
 		</c:forEach>
+
+		<!-- da qua devo andare alla jsp di inserimento. 
 		
-		
+		perchè il percorso è file1.jsp/funzionalità.jsp/funzionalitàservlet/file1.jsp
+		e non file.jsp/funzionalità.jsp
+		- -->
+		<a href="/MondoMVC/pagine/Inserimento.jsp">Inserisci</a>
+
 	</div>
-	
-	<div align="center" style="margin-top: 50px">
-	<a href="InserimentoServlet?id=${CittaInserita.id}">Inserisci</a>
-	</div>
+</body>
+</html>
+
+
+
+
 </body>
 </html>

@@ -22,7 +22,7 @@ public class CountryDaoImpl implements ICountryDao {
 
 		try {
 			connessione = ConnectionFactory.getConnection();
-			st = connessione.prepareStatement("Select distinct Continent from country");
+			st = connessione.prepareStatement("select distinct Continent from country order by Continent asc");
 
 			rs = st.executeQuery();
 
@@ -57,7 +57,7 @@ public class CountryDaoImpl implements ICountryDao {
 
 		try {
 			connessione = ConnectionFactory.getConnection();
-			st = connessione.prepareStatement("select * from country where Continent=?");
+			st = connessione.prepareStatement("select * from country where Continent=? order by Name asc");
 			st.setString(1, continente);
 			/* qua gli passo il parametro */
 			rs = st.executeQuery();

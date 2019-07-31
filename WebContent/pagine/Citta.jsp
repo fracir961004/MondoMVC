@@ -10,16 +10,18 @@
 	<h1>Le citta della nazione scelta:</h1>
 
 	<div align="center" style="margin-top: 50px">
-
+			
 		<c:forEach items="${elencoCitta}" var="city">
 			<br>
 			
-			${city.name}
+			${city.name} 
 			
 		   <div class="Azione">
 
-				<a href="EliminazioneServlet?id=${city.id}">Elimina</a>
+				<a href="EliminazioneServlet?id=${city.id}">Elimina</a> 
+			    <a href="/MondoMVC/pagine/InserimentoModifica.jsp?Name=${city.name}&id=${city.id}&popolazione=${city.population}">Modifica</a>
 			</div>
+
 
 
 
@@ -30,7 +32,8 @@
 		perchè il percorso è file1.jsp/funzionalità.jsp/funzionalitàservlet/file1.jsp
 		e non file.jsp/funzionalità.jsp
 		- -->
-		<a href="/MondoMVC/pagine/Inserimento.jsp">Inserisci</a>
+		<a href="/MondoMVC/pagine/InserimentoModifica.jsp">Inserisci</a>
+
 
 	</div>
 </body>

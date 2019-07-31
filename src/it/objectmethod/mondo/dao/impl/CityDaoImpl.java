@@ -97,9 +97,11 @@ public class CityDaoImpl implements ICityDao {
 				prepstat.setInt(4, idCitta);
 				prepstat.executeUpdate();
 			} else {
-				String sql = "Update city set(Name,CountryCode,District,Population) where id=?";
+				String sql = "update city set Name=?, Population=? where id=?";
 				prepstat = conn.prepareStatement(sql);
-				prepstat.setInt(1, idCitta);
+				prepstat.setString(1, name);
+				prepstat.setInt(2, popolazione);
+				prepstat.setInt(3, idCitta);
 				prepstat.executeUpdate();
 			}
 

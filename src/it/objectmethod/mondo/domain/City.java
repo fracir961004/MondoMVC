@@ -4,7 +4,7 @@ public class City {
 
 	private int id;
 	private String name;
-	private String countryCode;
+	private String code;
 	private String district;
 	private int population;
 
@@ -12,10 +12,10 @@ public class City {
 
 	}
 
-	public City(int id, String name, String countryCode, String district, int population) {
+	public City(int id, String name, String code, String district, int population) {
 		this.id = id;
 		this.name = name;
-		this.countryCode = countryCode;
+		this.code = code;
 		this.district = district;
 		this.population = population;
 	}
@@ -37,11 +37,11 @@ public class City {
 	}
 
 	public String getCountryCode() {
-		return countryCode;
+		return code;
 	}
 
 	public void setCountryCode(String countryCode) {
-		this.countryCode = countryCode;
+		code = countryCode;
 	}
 
 	public String getDistrict() {
@@ -61,6 +61,6 @@ public class City {
 	}
 
 	public String toString() {
-		return id + " " + name + " " + countryCode + " " + district + " " + population + " ";
+		return id + " " + name + " " + code + " " + district + " " + population + " ";
 	}
 }

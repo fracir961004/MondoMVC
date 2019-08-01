@@ -27,6 +27,7 @@ public class CittaServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		req.setAttribute("codice", nomeNaz);
 		req.setAttribute("elencoCitta", elenccity);
 		req.getRequestDispatcher("pagine/Citta.jsp").forward(req, resp);
 	}

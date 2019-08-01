@@ -9,34 +9,37 @@
 
 	<div align="center" style="margin-top: 50px">
 
-       
+
 		<form name="Inserisci" action="../InserimentoServlet">
-								
-			 <input name="id" type="hidden" value="${param.id}">
+			<br> <br> <input name="id" type="hidden"
+				value="${param.id}">
 			<p>
-				Nome: <input name="name" type="text" value="${param.Name}">  <!-- il param name serve per recuperare un parametro da una jsp diverso -->
+				Nome: <input name="name" type="text" value="${param.Name}">
+				<!-- il param name serve per recuperare un parametro da una jsp diverso -->
 			</p>
 
 			<p>
-				Popolazione: <input name="popolazione" type="number" value="${param.popolazione}">
+				Popolazione: <input name="popolazione" type="number"
+					value="${param.popolazione}">
 			</p>
-			
+
 			<p>
-				
-			 <input name="code" type="hidden">
-				
+
+			 <input name="code" type="hidden" value="${param.code}">
+
 			</p>
 
 			<!-- i parametri di sopra da dove li prendo?? Dalla insertupdate quindi aziono l'inserimento servlet e non città
 			     servlet -->
-				<input type="submit" value="Inserisci">
-				 
+			<br> <br> <input type="submit" value="Inserisci">
+
 		</form>
-		
-		
-		
-		
+
+
+
+
 	</div>
+
 
 </body>
 </html>

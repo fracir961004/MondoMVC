@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mysql.jdbc.Statement;
+
 import it.objectmethod.mondo.config.ConnectionFactory;
 import it.objectmethod.mondo.dao.ICityDao;
 import it.objectmethod.mondo.domain.City;
@@ -82,15 +84,14 @@ public class CityDaoImpl implements ICityDao {
 
 	}
 
-	public City inserimentoModificaCity(int idCitta, String name, String code, int popolazione) throws SQLException {
+	public City inserimentoModificaCity(int idCitta,String name, String code, int popolazione) throws SQLException {
 		City city = new City();
 		
 		try {
 				conn = ConnectionFactory.getConnection();
 			if (idCitta == 0) {
-
-				prepstat = conn.prepareStatement("Insert into city(Name,CountryCode,Population,ID) Values (?,?,?,?)");
-
+				String query="Insert into city(Name,CountryCode,Population,ID) Values (?,?,?,?)";
+				prepstat = conn.prepareStatement(query);
 				prepstat.setString(1, name);
 				prepstat.setString(2, code);
 				prepstat.setInt(3, popolazione);
@@ -117,5 +118,7 @@ public class CityDaoImpl implements ICityDao {
 		}
 		return city;
 	}
+	
+	
 
 }

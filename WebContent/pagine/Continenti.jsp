@@ -18,11 +18,10 @@
 
 
 
-
+		
 			<a href="/MondoMVC/NazioneServlet?Continent=${listaContinenti}">
 				${listaContinenti} </a>
-
-
+			
 		</c:forEach>
 
 	</div>

@@ -22,7 +22,7 @@
 			    <a href="/MondoMVC/pagine/InserimentoModifica.jsp?Name=${city.name}&id=${city.id}&popolazione=${city.population}">Modifica</a>
 			</div>
 
-
+			
 
 
 		</c:forEach>
@@ -32,9 +32,9 @@
 		perchè il percorso è file1.jsp/funzionalità.jsp/funzionalitàservlet/file1.jsp
 		e non file.jsp/funzionalità.jsp
 		- -->
-		<a href="/MondoMVC/pagine/InserimentoModifica.jsp">Inserisci</a>
-
-
+		
+		<a href="/MondoMVC/pagine/InserimentoModifica.jsp?id=0&code=${codice}">Inserisci</a>
+	
 	</div>
 </body>
 </html>

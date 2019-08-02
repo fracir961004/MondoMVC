@@ -13,7 +13,7 @@
 
 		<c:forEach items="${elencoCitta}" var="city">
 			<br>
-
+				<br>${city.name}<br>
 			<!-- da qua devo andare alla jsp di inserimento. 
 		
 		perchè il percorso è file1.jsp/funzionalità.jsp/funzionalitàservlet/file1.jsp
@@ -21,10 +21,11 @@
 		- -->
 			
 		   <div class="Azione">
-				 <br>${city.name}<br>
+				 
 				<a href="EliminazioneServlet?id=${city.id}">Elimina</a> 
+			
 				<a href="/MondoMVC/pagine/InserimentoModifica.jsp?Name=${city.name}&id=${city.id}&popolazione=${city.population}">Modifica</a> <br>
-				
+				${param.name}
 				
 			</div>
 

@@ -22,7 +22,7 @@ public class CittaServlet extends HttpServlet {
 		// più avanti
 		
 		String nomeNaz = req.getParameter("Name");
-		
+	
 		ICityDao city = new CityDaoImpl();
 		List<City> elenccity = new ArrayList<City>();
 		HttpSession sessione=req.getSession(true);
@@ -33,6 +33,7 @@ public class CittaServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		sessione.setAttribute("nome", req.getParameter("Name"));
+	
 		req.setAttribute("codice", nomeNaz);
 		sessione.setAttribute("elencoCitta", elenccity);
 		req.getRequestDispatcher("pagine/Citta.jsp").forward(req, resp);

@@ -31,8 +31,9 @@
 
 			<!-- i parametri di sopra da dove li prendo?? Dalla insertupdate quindi aziono l'inserimento servlet e non città
 			     servlet -->
-			<br> <br> <input type="submit" value="Inserisci">
-
+			
+				<input type="submit" value="Inserisci">
+			
 		</form>
 
 

@@ -10,31 +10,30 @@
 	<h1>Le citta della nazione scelta:</h1>
 
 	<div align="center" style="margin-top: 50px">
-			
+
 		<c:forEach items="${elencoCitta}" var="city">
 			<br>
-			
-			${city.name} 
-			
-		   <div class="Azione">
 
-				<a href="EliminazioneServlet?id=${city.id}">Elimina</a> 
-			    <a href="/MondoMVC/pagine/InserimentoModifica.jsp?Name=${city.name}&id=${city.id}&popolazione=${city.population}">Modifica</a>
-			</div>
-
-			
-
-
-		</c:forEach>
-
-		<!-- da qua devo andare alla jsp di inserimento. 
+			<!-- da qua devo andare alla jsp di inserimento. 
 		
 		perchè il percorso è file1.jsp/funzionalità.jsp/funzionalitàservlet/file1.jsp
 		e non file.jsp/funzionalità.jsp
 		- -->
+			
+		   <div class="Azione">
+				 <br>${city.name}<br>
+				<a href="EliminazioneServlet?id=${city.id}">Elimina</a> 
+				<a href="/MondoMVC/pagine/InserimentoModifica.jsp?Name=${city.name}&id=${city.id}&popolazione=${city.population}">Modifica</a> <br>
+				
+				
+			</div>
+
+		</c:forEach>
+
 		
+
 		<a href="/MondoMVC/pagine/InserimentoModifica.jsp?id=0&code=${codice}">Inserisci</a>
-	
+		${param.name}
 	</div>
 </body>
 </html>

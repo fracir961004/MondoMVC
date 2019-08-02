@@ -24,7 +24,7 @@ public class CityDaoImpl implements ICityDao {
 		City citta = null;
 		try {
 			conn = ConnectionFactory.getConnection();
-			prepstat = conn.prepareStatement("select * from city where city.countryCode=?");
+			prepstat = conn.prepareStatement("select * from city where city.countryCode=? order by Name");
 			prepstat.setString(1, nazione);
 			rest = prepstat.executeQuery();
 

@@ -2,6 +2,7 @@ package it.objectmethod.mondo.servlets;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,9 +20,11 @@ public class EliminazioneServlet extends HttpServlet {
 		/*l'id che gli passo nel parameter è lo stesso che gli passerò nella city.id*/
 		ICityDao cityDao = new CityDaoImpl();
 		City city = new City();
+		
 		try {
 			int idCity = Integer.parseInt(idCityStr);
 			city = cityDao.eliminazioneCitta(idCity);
+			
 		} catch (NumberFormatException | SQLException e) {
 			e.printStackTrace();
 		}

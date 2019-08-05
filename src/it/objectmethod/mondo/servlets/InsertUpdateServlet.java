@@ -27,9 +27,9 @@ public class InsertUpdateServlet extends HttpServlet {
 		ICityDao cityDao = new CityDaoImpl();
 		int idCity;
 		String idStr = request.getParameter("id");
-		String code;
+		String code=request.getParameter("code");
 		String name;
-		ArrayList<City> cittaIM=new ArrayList<City>();
+		HttpSession sessione=request.getSession();
 		try {
 			idCity = Integer.parseInt(idStr);
 			if (idCity > 0) {
@@ -53,8 +53,8 @@ public class InsertUpdateServlet extends HttpServlet {
 		// la sessione serve quando si attiva una funzionalità e si ritorna nella pagin
 		// precedente
 
-		request.setAttribute("citta", city);
-		request.getRequestDispatcher("pagine/Citta.jsp").forward(request, response);
+		sessione.setAttribute("citta", city);
+		request.getRequestDispatcher("/CittaServlet?code="+code).forward(request, response);
 	}
 	
 

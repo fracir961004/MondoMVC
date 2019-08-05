@@ -17,21 +17,17 @@
 			<br>
 
 
-			
-			<select name="nazione">
-			
-		<option  value="lista"><a href="/MondoMVC/NazioneServlet?Continent=${listaContinenti}">
-			
-			${listaContinenti}
-			
-			</a></option>
-</select>
-			
-			
+
+			<a href="/MondoMVC/NazioneServlet?Continent=${listaContinenti}">
+
+				${listaContinenti} </a>
+
+
+
 		</c:forEach>
-		
-		
-			
+
+
+
 	</div>
 
 

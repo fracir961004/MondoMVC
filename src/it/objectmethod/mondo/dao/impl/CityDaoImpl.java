@@ -84,13 +84,13 @@ public class CityDaoImpl implements ICityDao {
 
 	}
 
-	public City inserimentoModificaCity(int idCitta,String name, String code, int popolazione) throws SQLException {
+	public City inserimentoModificaCity(int idCitta, String name, String code, int popolazione) throws SQLException {
 		City city = new City();
-		
+
 		try {
-				conn = ConnectionFactory.getConnection();
+			conn = ConnectionFactory.getConnection();
 			if (idCitta == 0) {
-				String query="Insert into city(Name,CountryCode,Population,ID) Values (?,?,?,?)";
+				String query = "Insert into city(Name,CountryCode,Population,ID) Values (?,?,?,?)";
 				prepstat = conn.prepareStatement(query);
 				prepstat.setString(1, name);
 				prepstat.setString(2, code);
@@ -118,7 +118,5 @@ public class CityDaoImpl implements ICityDao {
 		}
 		return city;
 	}
-	
-	
 
 }

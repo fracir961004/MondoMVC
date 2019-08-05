@@ -22,9 +22,9 @@
 			
 		   <div class="Azione">
 				 
-				<a href="EliminazioneServlet?id=${city.id}">Elimina</a> 
+				<a href="EliminazioneServlet?id=${city.id}&code=${codice}">Elimina</a> 
 			
-				<a href="/MondoMVC/pagine/InserimentoModifica.jsp?Name=${city.name}&id=${city.id}&popolazione=${city.population}">Modifica</a> <br>
+				<a href="/MondoMVC/pagine/InserimentoModifica.jsp?Name=${city.name}&id=${city.id}&popolazione=${city.population}&code=${codice}">Modifica</a> <br>
 				${param.name}
 				
 			</div>
